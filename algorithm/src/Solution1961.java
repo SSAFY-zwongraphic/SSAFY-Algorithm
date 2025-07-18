@@ -30,29 +30,7 @@ public class Solution1961 {
 			matrix180 = sol.rotate90(matrix90, matrix180);
 			matrix270 = sol.rotate90(matrix180, matrix270);
 			
-			System.out.println("=== 90µµ ===");
-			for (int i = 0; i < N; i++) {
-				for (int j = 0; j < N; j++) {
-					System.out.print(matrix90[i][j] + " ");
-				}
-				System.out.println();
-			}
-
-			System.out.println("=== 180µµ ===");
-			for (int i = 0; i < N; i++) {
-				for (int j = 0; j < N; j++) {
-					System.out.print(matrix180[i][j] + " ");
-				}
-				System.out.println();
-			}
-
-			System.out.println("=== 270µµ ===");
-			for (int i = 0; i < N; i++) {
-				for (int j = 0; j < N; j++) {
-					System.out.print(matrix270[i][j] + " ");
-				}
-				System.out.println();
-			}
+			
 		}
 	}
 
