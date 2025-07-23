@@ -1,4 +1,4 @@
-package swea;
+package swea.d_0717;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
