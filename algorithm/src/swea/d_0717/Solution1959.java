@@ -9,10 +9,8 @@ public class Solution1959 {
 		T = sc.nextInt();
 
 		for (int t = 1; t <= T; t++) {
-			int N;
-			int M;
-			N = sc.nextInt();
-			M = sc.nextInt();
+			int N = sc.nextInt();
+			int M = sc.nextInt();
 
 			int[] A = new int[N];
 			int[] B = new int[M];
