@@ -23,9 +23,8 @@ public class Solution2023 {
 		}
 
 		int firstNum[] = { 2, 3, 5, 7 };
-		for (int i = 0; i < 4; i++) {
-			int count = 2;
-			DFS(firstNum[i], firstNum[i], n, count);
+		for (int i : firstNum) {
+			DFS(i, 1, n);
 		}
 
 		for (int i : prime) {
@@ -33,28 +32,18 @@ public class Solution2023 {
 		}
 	}
 
-	public static void DFS(int i, int num, int n, int count) {
-		if (count == n) {
-			for (int j : graph[i]) {
-				int nextNum = num * 10 + j;
-				if (isPrime(nextNum)) {
-					prime.add(nextNum);
-				}
-			}
-			count--;
+	public static void DFS(int i, int depth, int n) {
+		if (depth == n) {
+			prime.add(i);
 			return;
 		}
 
-		if (count < n) {
-			for (int j : graph[i]) {
-				int nextNum = num * 10 + j;
-				if (isPrime(nextNum)) {
-					count++;
-					DFS(j, nextNum, n, count);
+		if (depth < n) {
+			for (int j : graph[i % 10]) {
+				if (isPrime(i*10+j)) {
+					DFS(i * 10 + j, depth + 1, n);
 				}
 			}
-			count--;
-			return;
 		}
 	}
 
