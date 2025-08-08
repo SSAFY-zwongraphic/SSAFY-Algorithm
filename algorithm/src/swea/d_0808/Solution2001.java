@@ -1,12 +1,10 @@
-package swea.d_0807;
+package swea.d_0808;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-//D2
-//슬라이딩 윈도우로 풀었는데, 2차원 배열에서 슬라이딩 윈도우는 정말 복잡하고 별로!
 public class Solution2001 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -15,37 +13,31 @@ public class Solution2001 {
 			StringTokenizer st = new StringTokenizer(br.readLine());
 			int n = Integer.parseInt(st.nextToken());
 			int m = Integer.parseInt(st.nextToken());
-			int[][] N = new int[n + 1][n + 1];
+			int[][] nn = new int[n + 1][n + 1];
 			for (int i = 1; i < n + 1; i++) {
 				st = new StringTokenizer(br.readLine());
 				for (int j = 1; j < n + 1; j++) {
-					N[i][j] = Integer.parseInt(st.nextToken());
+					nn[i][j] = Integer.parseInt(st.nextToken());
+				}
+			}
+
+			int[][] nnSum = new int[n + 1][n + 1];
+			for (int i = 1; i < n + 1; i++) {
+				for (int j = 1; j < n + 1; j++) {
+					nnSum[i][j] = nnSum[i - 1][j] + nnSum[i][j - 1] - nnSum[i - 1][j - 1] + nn[i][j];
 				}
 			}
 
 			int max = 0;
-			for (int i = 1; i < n - m + 1; i++) {
+			for (int i = m; i < m + (n - m + 1); i++) {
 				int sum = 0;
-				for (int j = 0; j < m; j++) {
-					for (int k = 0; k < m; k++) {
-						sum += N[i + j][1 + k];
-					}
-				}
-				System.out.println(sum);
-				max = Math.max(max, sum);
-				System.out.println(max);
-
-				for (int j = 1; j < n - m + 1; j++) {
-					for (int k = 0; k < m; k++) {
-						sum += N[i + k][j + m];
-						sum -= N[i + k][j];
-					}
-					System.out.println(sum);
+				for (int j = m; j < m + (n - m + 1); j++) {
+					sum = nnSum[i][j] - nnSum[i - m][j] - nnSum[i][j - m] + nnSum[i - m][j - m];
 					max = Math.max(max, sum);
-					System.out.println(max);
 				}
 			}
-			System.out.println(max);
+			
+			System.out.printf("#%d %d\n", t, max);
 		}
 	}
 }
