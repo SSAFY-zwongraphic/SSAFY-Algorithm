@@ -1,15 +1,17 @@
-package baekjoon.d_0808;
+package baekjoon.d_0810;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Solution5567 {
+public class Solution5567_bfs {
 	public static ArrayList<Integer>[] friend;
-	public static int depth;
 	public static boolean[] invited;
+	public static int depth;
 	public static int count;
 
 	public static void main(String[] args) throws IOException {
@@ -17,10 +19,8 @@ public class Solution5567 {
 		int n = Integer.parseInt(br.readLine());
 		int m = Integer.parseInt(br.readLine());
 		friend = new ArrayList[n + 1];
-		depth = 0;
 		invited = new boolean[n + 1];
-		count = 0;
-		for (int i = 1; i <= n; i++) {
+		for (int i = 1; i < n + 1; i++) {
 			friend[i] = new ArrayList<>();
 		}
 		for (int i = 0; i < m; i++) {
@@ -30,23 +30,37 @@ public class Solution5567 {
 			friend[f1].add(f2);
 			friend[f2].add(f1);
 		}
-		invited[1] = true;
-		dfs(1, 0);
+
+		depth = 0;
+		count = 0;
+		bfs(1);
+
 		System.out.println(count);
 	}
 
-	public static void dfs(int num, int depth) {
-		if (depth == 2) {
-			return;
-		}
+	public static void bfs(int start) {
+		Queue<Integer> queue = new ArrayDeque<>();
 
-		if (depth < 2) {
-			for (int i : friend[num]) {
-				if (!invited[i]) {
-					count++;
-					invited[i] = true;
-					dfs(i, depth + 1);
+		invited[start] = true;
+		queue.offer(start);
+
+		while (!queue.isEmpty()) {
+			int size = queue.size();
+			for (int i = 0; i < size; i++) {
+				start = queue.poll();
+
+				for (int next : friend[start]) {
+					if (!invited[next]) {
+						invited[next] = true;
+						queue.offer(next);
+						count++;
+					}
 				}
+			}
+
+			depth++;
+			if (depth >= 2) {
+				break;
 			}
 		}
 	}
