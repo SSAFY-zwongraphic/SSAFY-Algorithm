@@ -12,16 +12,36 @@ public class Solution2343 {
 		int n = Integer.parseInt(st.nextToken());
 		int m = Integer.parseInt(st.nextToken());
 		int lecture[] = new int[n];
-		int sumLecture = 0;
+		int start = 0;
+		int end = 0;
 		st = new StringTokenizer(br.readLine());
 		for (int i = 0; i < n; i++) {
 			lecture[i] = Integer.parseInt(st.nextToken());
-			sumLecture += lecture[i];
+			start = Math.max(start, lecture[i]);
+			end += lecture[i];
 		}
 
-		int blueray[] = new int[m];
-		for (int i = 0; i < m; i++) {
-			blueray[i] = sumLecture / 3;
+		int bluray = 0;
+		while (start <= end) {
+			bluray = (start + end) / 2;
+
+			int sum = 0;
+			int count = 1;
+			for (int i = 0; i < n; i++) {
+				if (sum + lecture[i] <= bluray) {
+					sum += lecture[i];
+				} else {
+					count++;
+					sum = lecture[i];
+				}
+			}
+			if (count > m) {
+				start = bluray + 1;
+			} else {
+				end = bluray - 1;
+			}
 		}
+
+		System.out.println(start);
 	}
 }
