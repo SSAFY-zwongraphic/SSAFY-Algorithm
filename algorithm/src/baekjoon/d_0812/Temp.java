@@ -15,7 +15,10 @@ public class Temp {
 		// step 0
 		Arrays.sort(input);
 
-		nextPermutation(input);
+		// step 5
+		do {
+			System.out.println(Arrays.toString(input));
+		} while (nextPermutation(input));
 	}
 
 	// 사전순으로 다음 순열 생성
@@ -39,14 +42,20 @@ public class Temp {
 		}
 
 		// step 3
-		int temp = input[i - 1];
-		input[i - 1] = input[j];
-		input[j] = temp;
+		swap(input, i - 1, j);
 
 		// step 4
 		int k = n - 1;
-		//마저 해야함
+		while (i < k) {
+			swap(input, i++, k--);
+		}
 
 		return true;
+	}
+
+	private static void swap(int[] input, int i, int j) {
+		int temp = input[i];
+		input[i] = input[j];
+		input[j] = temp;
 	}
 }
