@@ -41,9 +41,7 @@ public class Solution11728 {
 }
 
 /*
-다른 풀이로는 while 조건문을 아래처럼 하고,
-while (a < N && b < M)
-남은 요소 처리하는 코드 추가하는 방법이 있음
-while (a < N) sb.append(A[a++]).append(" ");
-while (b < M) sb.append(B[b++]).append(" ");
-*/
+ * 다른 풀이로는 while 조건문을 아래처럼 하고, while (a < N && b < M) 남은 요소 처리하는 코드 추가하는 방법이 있음
+ * while (a < N) sb.append(A[a++]).append(" "); while (b < M)
+ * sb.append(B[b++]).append(" ");
+ */
