@@ -1,4 +1,4 @@
-package baekjoon;
+package baekjoon.d_0814;
 
 import java.util.Scanner;
 
@@ -19,7 +19,7 @@ public class Solution9663 {
 
 	private static void backtracking(int col, int row) {
 		for (int i = 0; i < nn.length; i++) {
-
+			
 		}
 	}
 }
