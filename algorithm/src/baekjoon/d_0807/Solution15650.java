@@ -3,7 +3,6 @@ package baekjoon.d_0807;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//조합 실버 3
 public class Solution15650 {
 	public static int n;
 	public static int m;
