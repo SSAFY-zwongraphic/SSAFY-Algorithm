@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Solution5643_Refact {
+public class Solution5643_refact {
 	private static ArrayList<Integer>[] studentUp;
 	private static ArrayList<Integer>[] studentDown;
 	private static boolean[] known;
