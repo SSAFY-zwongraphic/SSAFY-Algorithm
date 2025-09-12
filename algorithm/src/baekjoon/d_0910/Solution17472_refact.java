@@ -32,7 +32,7 @@ public class Solution17472_refact {
 	private static List<Edge> bridge;
 	private static int[] parent;
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException  {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 
