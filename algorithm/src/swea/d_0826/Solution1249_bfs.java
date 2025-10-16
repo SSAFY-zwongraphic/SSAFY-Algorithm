@@ -15,7 +15,7 @@ public class Solution1249_bfs {
 	private static int[][] distance;
 
 	public static void main(String[] args) throws IOException {
-		System.setIn(new FileInputStream("swea/d_0826/input1249.txt"));
+		System.setIn(new FileInputStream("src/swea/d_0826/input1249.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int T = Integer.parseInt(br.readLine());
 		for (int t = 1; t <= T; t++) {

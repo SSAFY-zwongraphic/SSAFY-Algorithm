@@ -12,7 +12,7 @@ public class Solution1873 {
 	private static int x, y;
 
 	public static void main(String[] args) throws IOException {
-		System.setIn(new FileInputStream("swea/d_0821/input1873.txt"));
+		System.setIn(new FileInputStream("src/swea/d_0821/input1873.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int T = Integer.parseInt(br.readLine());
 

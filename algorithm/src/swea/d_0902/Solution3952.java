@@ -11,7 +11,7 @@ import java.util.StringTokenizer;
 
 public class Solution3952 {
 	public static void main(String[] args) throws IOException {
-		System.setIn(new FileInputStream("swea/d_0902/input3952.txt"));
+		System.setIn(new FileInputStream("src/swea/d_0902/input3952.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int T = Integer.parseInt(br.readLine());
 		for (int t = 1; t <= T; t++) {
