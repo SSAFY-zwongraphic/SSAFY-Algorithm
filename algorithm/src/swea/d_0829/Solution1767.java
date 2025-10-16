@@ -17,7 +17,7 @@ public class Solution1767 {
 	private static int minLine;
 
 	public static void main(String[] args) throws IOException {
-		System.setIn(new FileInputStream("swea/d_0829/input1767.txt"));
+		System.setIn(new FileInputStream("src/swea/d_0829/input1767.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int T = Integer.parseInt(br.readLine());
 

@@ -15,7 +15,7 @@ public class Solution1238 {
 	private static int[] count;
 
 	public static void main(String[] args) throws IOException {
-		System.setIn(new FileInputStream("swea/d_0821/input1238.txt"));
+		System.setIn(new FileInputStream("src/swea/d_0821/input1238.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		for (int t = 1; t <= 10; t++) {
